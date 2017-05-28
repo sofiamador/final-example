@@ -51,7 +51,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<mainClass>finalExample.Example</mainClass>
+					<mainClass>finalExample.MyWindows</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>

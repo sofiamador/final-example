@@ -26,18 +26,17 @@ import com.amazonaws.services.sns.model.PublishResult;
 
 public class Example {
 	
-	public static void main(String[] args) throws IOException {
+	public static void runExampale() throws IOException {
 
-		String[] s = LocationService.myLocation();
+		
 		File f = createFile("pic1.jpg");
 		String url= uploadToS3(f, "sofiamdor","pic1.jpg");
+		String[] s = LocationService.myLocation();
 		String temperature = WeatherService.getWeather(s[0]);
-		SendSMS(url + "\nThe temperature is: " + temperature,"+972544452505");
-		
-		
+		SendSMS(url + "\nThe temperature is: " + temperature,"+972544452505");		
 	}
 	
-	private static void SendSMS(String message, String phoneNumber) {
+	static void SendSMS(String message, String phoneNumber) {
 		 AmazonSNSClient snsClient = new AmazonSNSClient();
 	        Map<String, MessageAttributeValue> smsAttributes = 
 	                new HashMap<String, MessageAttributeValue>();
@@ -58,7 +57,7 @@ public class Example {
 	        System.out.println(result); // Prints the message ID.
 	}
 
-	private static String uploadToS3(File f, String bucketName, String key) {
+	static String uploadToS3(File f, String bucketName, String key) {
 		AmazonS3 s3 = new AmazonS3Client();
         Region usWest2 = Region.getRegion(Regions.US_EAST_1);
         s3.setRegion(usWest2);
