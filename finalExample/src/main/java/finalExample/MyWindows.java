@@ -91,7 +91,7 @@ public class MyWindows {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				File f = Example.createFile(text1.getText());
-				String url= Example.uploadToS3(f, text2.getText(),text3.getText());
+				 url= Example.uploadToS3(f, text2.getText(),text3.getText());
 			}
 		});
 		btnNewButton.setBounds(53, 199, 117, 23);

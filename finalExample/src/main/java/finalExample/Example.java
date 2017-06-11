@@ -72,6 +72,7 @@ public class Example {
             PutObjectRequest putObj = new PutObjectRequest(bucketName, key,f);
             putObj.setCannedAcl(CannedAccessControlList.PublicRead);
             s3.putObject(putObj);
+            System.out.println("Finish");
             return s3.getUrl(bucketName, key).toString();
              
          
